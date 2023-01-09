@@ -1,5 +1,5 @@
 import React from 'react';
-import './BootstrapKit.css'
+import './MaterialKit.css';
 import Button from '@mui/material/Button';
 import { ButtonProps, InputProps } from './Types';
 import { UIKit } from './UIKit';

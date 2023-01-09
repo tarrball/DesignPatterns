@@ -6,9 +6,9 @@ import { UIKit } from './UIKit';
 
 const useUIKit = (type: ComponentType): IUIKit => {
     switch (type) {
-        case 'bootstrap':
+        case 'Bootstrap':
             return new BootstrapKit();
-        case 'material':
+        case 'Material':
             return new MaterialKit();
         default:
             return new UIKit();

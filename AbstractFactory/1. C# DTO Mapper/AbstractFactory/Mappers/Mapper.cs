@@ -6,7 +6,7 @@ public class Mapper
 {
     private readonly IMapper _mapper;
 
-    public Mapper()
+    protected Mapper()
     {
         _mapper = new MapperConfiguration(config =>
             {

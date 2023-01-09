@@ -4,10 +4,10 @@ import { ComponentType } from './UIKit/Types';
 import useUIKit from './UIKit/useUIKit';
 
 function App() {
-    const [componentType, setComponentType] = useState<ComponentType>('material');
+    const [componentType, setComponentType] = useState<ComponentType>('Material');
 
     const toggleUIKit = (currentType: ComponentType) => {
-        setComponentType(currentType === 'bootstrap' ? 'material' : 'bootstrap');
+        setComponentType(currentType === 'Bootstrap' ? 'Material' : 'Bootstrap');
     };
 
     const UIKit = useUIKit(componentType);
@@ -15,10 +15,12 @@ function App() {
     return (
         <div>
             <header>
-                {/* make some kind of toggle? */}
-                <UIKit.Button onClick={() => toggleUIKit(componentType)}>Toggle</UIKit.Button>
+                <UIKit.Button onClick={() => toggleUIKit(componentType)}>
+                    {componentType === 'Bootstrap' ? 'Show Bootstrap' : 'Show Material'}
+                </UIKit.Button>
             </header>
             <main>
+                <h1>UIKit Toggling</h1>
                 <form>
                     <UIKit.Input></UIKit.Input>
                     <UIKit.Input></UIKit.Input>

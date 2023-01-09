@@ -1,6 +1,6 @@
 import React from 'react';
 
-type ComponentType = 'bootstrap' | 'material';
+type ComponentType = 'Bootstrap' | 'Material';
 
 interface IUIKit {
     Button(props: ButtonProps): JSX.Element;

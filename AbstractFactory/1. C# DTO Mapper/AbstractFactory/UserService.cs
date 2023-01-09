@@ -4,7 +4,7 @@ namespace AbstractFactory;
 
 public class UserService
 {
-    private readonly ENT.User[] Users =
+    private readonly ENT.User[] _users =
     {
         new()
         {
@@ -28,6 +28,6 @@ public class UserService
 
     public DTO.UserBase[] List()
     {
-        return _mapper.MapUsers(Users);
+        return _mapper.MapUsers(_users);
     }
 }
