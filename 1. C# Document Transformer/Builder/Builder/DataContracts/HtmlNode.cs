@@ -1,4 +1,4 @@
-namespace Builder;
+namespace Builder.DataContracts;
 
 public class HtmlNode
 {

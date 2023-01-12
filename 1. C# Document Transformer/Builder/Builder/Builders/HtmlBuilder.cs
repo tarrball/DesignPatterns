@@ -1,4 +1,6 @@
-namespace Builder;
+using Builder.DataContracts;
+
+namespace Builder.Builders;
 
 public class HtmlBuilder : BuilderBase
 {
@@ -38,9 +40,9 @@ public class HtmlBuilder : BuilderBase
         };
     }
 
-    public override void AddParagraph(AttributedText[] text)
+    public override void AddParagraph(AttributedText[] attributedTexts)
     {
-        var children = text.Select(child => new HtmlNode
+        var children = attributedTexts.Select(child => new HtmlNode
             {
                 Tag = child.Attributes.Any() ? "span" : null,
                 Text = child.Text,

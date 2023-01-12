@@ -1,4 +1,5 @@
-using Builder;
+using Builder.Builders;
+using Builder.Directors;
 using Shouldly;
 
 namespace BuilderTests;
@@ -6,16 +7,16 @@ namespace BuilderTests;
 [TestClass]
 public class BuilderTests
 {
-    [TestMethod]
-    public void Markdown_To_HTML()
-    {
-        const string markdown =
-            @"# Hello World
+    private const string Markdown =
+        @"# Hello World
 
 This is just a _little_ text.";
 
+    [TestMethod]
+    public void Markdown_To_HTML()
+    {
         var builder = new HtmlBuilder();
-        MarkdownTranslator.Translate(builder, markdown);
+        MarkdownTranslator.Translate(builder, Markdown);
 
         var html = builder.GetHtml();
 
@@ -35,5 +36,14 @@ This is just a _little_ text.";
         span.Tag.ShouldBe("span");
         span.Text.ShouldBe("little");
         span.Classes[0].ShouldBe("i");
+    }
+
+    [TestMethod]
+    public void Markdown_To_PlainText()
+    {
+        var builder = new PlainTextBuilder();
+        MarkdownTranslator.Translate(builder, Markdown);
+        
+        builder.GetText().ShouldBe("Hello World\nThis is just a little text.");
     }
 }

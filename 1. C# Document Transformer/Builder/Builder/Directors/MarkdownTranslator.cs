@@ -1,4 +1,7 @@
-﻿namespace Builder;
+﻿using Builder.Builders;
+using Builder.DataContracts;
+
+namespace Builder.Directors;
 
 public static class MarkdownTranslator
 {
