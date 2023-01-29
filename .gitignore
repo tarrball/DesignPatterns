@@ -372,6 +372,7 @@ __blobstorage__
 coverage/
 dist/
 secrets.json
+.angular
 */cypress/videos
 */cypress/screenshots
 __azurite_db_queue__.json
