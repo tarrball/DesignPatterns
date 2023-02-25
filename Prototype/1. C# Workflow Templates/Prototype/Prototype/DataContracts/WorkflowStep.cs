@@ -1,10 +1,6 @@
 namespace Prototype.DataContracts;
 
-public class WorkflowStep
+public class WorkflowStepBase
 {
-    public Guid Id { get; set; }
-    
-    public WorkflowStepType Type { get; set; }
-
-    public Role[] AvailableRoles { get; set; } = null!;
+    public Guid Id { get; } = Guid.NewGuid();
 }

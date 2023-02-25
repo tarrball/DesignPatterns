@@ -7,8 +7,21 @@ internal static class Mapper
 {
     private static readonly MapperConfiguration Configuration = new(config =>
     {
-        config.CreateMap<WorkflowStep, WorkflowStep>();
-        config.CreateMap<Workflow, Workflow>();
+        config
+            .CreateMap<Workflow, Workflow>();
+        
+        config.CreateMap<WorkflowStepBase, WorkflowStepBase>()
+            .IncludeAllDerived()
+            .ForMember(dest => dest.Id, opt => opt.Ignore());
+        
+        config
+            .CreateMap<ApprovalStep, ApprovalStep>();
+        
+        config
+            .CreateMap<FileGenerationStep, FileGenerationStep>();
+        
+        config
+            .CreateMap<RequestStep, RequestStep>();
     });
 
     // ReSharper disable once InconsistentNaming
